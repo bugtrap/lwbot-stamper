@@ -1,0 +1,15 @@
+{
+  "name": "lwbot-stamper",
+  "version": "1.0.0",
+  "description": "LINE WORKS Sample Code",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Genta Kitase",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.1.2",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
