@@ -56,5 +56,5 @@ async function main() {
 }
 
 main().catch((raeson) => {
-  console.error("エラー", raeson);
+  console.error("失敗", raeson.message, raeson.response?.data);
 });

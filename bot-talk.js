@@ -25,8 +25,10 @@ async function talkToUser(accessToken, botId, userId) {
 async function main() {
   const accessToken = await LWAuth.getAccessToken();
   await talkToUser(accessToken, botId, userId);
+
+  console.log(`${userId} さんに送信完了！`);
 }
 
 main().catch((raeson) => {
-  console.error("エラー", raeson);
+  console.error("失敗", raeson.message, raeson.response?.data);
 });
