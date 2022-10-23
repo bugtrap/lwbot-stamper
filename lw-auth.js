@@ -5,8 +5,8 @@ const jwt = require("jsonwebtoken");
 // ---- 認証情報 ----
 const clientId = "【Client ID】";
 const clientSecret = "【Client Secret】";
-const serverAccount = "【Service Account】"; // xxxxx.serviceaccount@line-works-domain
-const privateKeyFile = "【Private Key ファイルパス】"; // private_xxxxxxxxxxxxxx.key
+const serverAccount = "【Service Account】";           // 例: abc12.serviceaccount@line-works-domain
+const privateKeyFile = "【Private Key ファイルパス】"; // 例: private_20221024xxxxxx.key
 
 /**
  * サーバーアカウント認証に使う JWT を返します

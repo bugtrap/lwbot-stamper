@@ -2,8 +2,9 @@ const LWAuth = require("./lw-auth");
 const axios = require("axios");
 
 // ---- ボットの登録情報 ----
-const domainId = "【ドメインID】";
-const adminUserId = "【ボット管理者のユーザーID】"; // admin@line-works-domain
+const domainId = "【ドメインID】";                  // 例: 401234567
+const adminUserId = "【ボット管理者のユーザーID】"; // 例: admin@line-works-domain
+const botName = "【ボットの名前】";
 
 /**
  * ボットを登録します
@@ -15,8 +16,8 @@ async function registerBot(accessToken) {
 
   // @see https://developers.worksmobile.com/jp/reference/bot-create
   const res = await axios.post(`https://www.worksapis.com/v1.0/bots`, {
-    botName: "【ボットの名前】",
-    description: "【ボットの説明】",
+    botName: botName,
+    description: botName,
     photoUrl: "https://localhost/bot.png",
     administrators: [adminUserId],
   }, { headers });
@@ -37,10 +38,10 @@ async function registerBotToDomain(accessToken, botId, domainId) {
 
   // @see https://developers.worksmobile.com/jp/reference/bot-domain-register
   const res = await axios.post(`https://www.worksapis.com/v1.0/bots/${botId}/domains/${domainId}`, {
-    botName: "ボットの名前",
+    botName: botName,
     photoUrl: "https://localhost/bot.png",
-    description: "ボットの説明",
-    administrators: ["sample.taro@examplecorporation"],
+    description: botName,
+    administrators: [adminUserId],
   }, { headers });
 
   console.log("[registerBotToDomain]", res.data);
